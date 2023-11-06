@@ -15,15 +15,28 @@ namespace Task3.Repositories
             _dbContext = dbContext;
         }
 
-        public async System.Threading.Tasks.Task Add(Product product)
+        public async Task Add(Product product)
         {
             await _dbContext.Products.AddAsync(product);
             await _dbContext.SaveChangesAsync();
         }
 
+        public void Delete(Product product)
+        {
+           _dbContext.Products.Remove(product); 
+            _dbContext.SaveChanges();   
+        }
+
         public async Task<List<Product>> GetAllAsync()
         {
             return await _dbContext.Products.ToListAsync();
+        }
+
+        public void Update(Product product)
+        {
+            _dbContext.Update(product);
+            _dbContext.SaveChangesAsync();
+
         }
     }
 }

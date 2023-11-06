@@ -15,7 +15,8 @@ namespace Task3.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    Discount = table.Column<double>(type: "float", nullable: false)
+                    Discount = table.Column<double>(type: "float", nullable: false),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

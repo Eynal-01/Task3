@@ -7,7 +7,8 @@ namespace Task3.Repositories
     public interface IProductRepository
     {
         Task<List<Product>> GetAllAsync();
-        System.Threading.Tasks.Task Add(Product product);      
-
+        Task Add(Product product);      
+        void Update(Product product);   
+        void Delete(Product product);   
     }
 }

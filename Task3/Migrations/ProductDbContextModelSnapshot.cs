@@ -18,7 +18,7 @@ namespace Task3.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Task.Entities.Product", b =>
+            modelBuilder.Entity("Task3.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,6 +30,9 @@ namespace Task3.Migrations
 
                     b.Property<double>("Discount")
                         .HasColumnType("float");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

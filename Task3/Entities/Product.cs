@@ -7,5 +7,6 @@
         public string Category { get; set; }
         public double Price { get; set; }
         public double Discount { get; set; }
+        public string ImagePath { get; set; }
     }
 }

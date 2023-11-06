@@ -9,7 +9,7 @@ using Task3.Data;
 namespace Task3.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20231103113713_Init")]
+    [Migration("20231106114653_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace Task3.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Task.Entities.Product", b =>
+            modelBuilder.Entity("Task3.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,6 +32,9 @@ namespace Task3.Migrations
 
                     b.Property<double>("Discount")
                         .HasColumnType("float");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

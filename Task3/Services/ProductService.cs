@@ -16,10 +16,25 @@ namespace Task3.Services
             _productRepository = productRepository;
         }
 
+        public async Task Add(Product product)
+        {
+            await _productRepository.Add(product);
+        }
+
+        public void Delete(Product product)
+        {
+            _productRepository.Delete(product);
+        }
+
         public async Task<List<Product>> GetAllByKey(string key = "")
         {
             var data = await _productRepository.GetAllAsync();
             return key != "" ? data.Where(s => s.Name.ToLower().Contains(key.ToLower())).ToList() : data;
+        }
+
+        public void Update(Product product)
+        {
+            _productRepository.Update(product);
         }
     }
 }
